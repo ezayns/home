@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Love Letter</title>
+        <link rel="stylesheet" href="Untitled-1.css">
+    </head>
+    <body>
+        <!-- Simple Audio - No JavaScript needed -->
+        <audio autoplay loop muted id="bgMusic">
+            <source src="songs/Novo Amor - Anchor (Lyrics) - Digital Mount.mp3" type="audio/mpeg">
+        </audio>
+
+        <script>
+            // Force play the music
+            document.addEventListener('DOMContentLoaded', function() {
+                const music = document.getElementById('bgMusic');
+                music.muted = false; // Unmute
+                music.volume = 0.7; // Set volume
+                
+                // Try to play multiple times
+                const playMusic = () => {
+                    music.play().then(() => {
+                        console.log('Music is playing!');
+                    }).catch(error => {
+                        console.log('Trying again...');
+                        setTimeout(playMusic, 1000);
+                    });
+                };
+                
+                playMusic();
+                
+                // Also play on any click
+                document.body.addEventListener('click', function() {
+                    music.play();
+                });
+            });
+        </script>
+
+        <div class="banner">  
+            <div class="slider" style="--quantity: 10">
+                <div class="item" style="--position: 1"><img src="images/1.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 2"><img src="images/her6.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 3"><img src="images/Her4.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 4"><img src="images/2.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 5"><img src="images/4.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 6"><img src="images/3.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 7"><img src="images/5.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 8"><img src="images/1.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 9"><img src="images/her6.jpeg" alt="image1"> </div>
+                <div class="item" style="--position: 10"><img src="images/Her4.jpeg" alt="image1"> </div>
+            </div>
+            <div class="content">
+                <h1>Yours Only</h1>
+                <div class="author">
+                    <h2>Zayn Sakala</h2>
+                    <p>Web Designer/cyber analyst/your MANZ</p>
+                    <p>Welcome to what I am made of</p>
+                </div>  
+                <div class="model"></div>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Section -->
+        <section class="scroll-content">
+            <!-- Set 1 -->
+            <div class="content-set">
+                <div class="text-content">
+                    <h2>L</h2>
+                    <p>Looking at you feels like coming home. where we are, what we do. Everything just feels right
+                        Loving you is not easy i know you'd say so but its the most natural thing i have ever done with free mind
+                        and endless peace. Like my heart recognised yours
+                    </p>
+                </div>
+                <div class="media-content">
+                    <img src="images/her6.jpeg" alt="Media 1">
+                </div>
+            </div>
+
+            <!-- Set 2 -->
+            <div class="content-set">
+               <video autoplay loop muted playsinline>
+    <source src="videos/her1.mp4" type="video/mp4">
+</video>
+                <div class="text-content">
+                    <h2>O</h2>
+                    <p>Overwhelmingly beautiful. Overwhelmed by how lucky i am. to find my favourite person to 
+                        share every part of me with.
+                        Out of all the dreams i have ever had. none can compare to the reality of building something with you.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Set 3 -->
+            <div class="content-set">
+                <div class="text-content">
+                    <h2>V</h2>
+                    <p>Very few people in life are irreplaceable. Unfortunately i don't fall in thats
+                        category but to have you who is irreplaceable is such a blessing.
+                        Vowig to give you the best because you are the best. To always be your safe space
+                        To value and protect you
+                    </p>
+                </div>
+                <div class="media-content">
+                    <img src="images/Her3.jpeg" alt="Media 3">
+                </div>
+            </div>
+
+            <!-- Set 4 -->
+            <div class="content-set">
+                 <video autoplay loop muted playsinline>
+    <source src="videos/Her5.mp4 " type="video/mp4">
+</video>
+                <div class="text-content">
+                    <h2>E</h2>
+                    <p>Every part of my day is better when i get to share it with you.
+                    from good morning calls, silly texts and quiet eveningd. it all matters. because i share em with you
+                    Note: you are woven to every part of my sould and i wouldnt have it any other way or with anyone
+                    else
+                    </p>
+                </div>
+            </div>
+
+            <!-- Set 5 -->
+            <div class="content-set">
+                <div class="text-content">
+                    <h2>Lastly</h2>
+                    <p>Notice how the text spells above love? I know you may be asking why there isn't I and U. Well. i love Your
+                        and its not complete without i and You right. thats exactly my sitaution without you.
+                </p>
+                </div>
+                <video autoplay loop muted playsinline>
+    <source src="videos/Her2.mp4" type="video/mp4">
+</video>
+            </div>
+        </section>
+
+        <!-- Download Letter Section -->
+        <section class="download-section">
+            <div class="container">
+                <h2 class="centered-text">Just a few more words from me to you</h2>
+                <p class="centered-subtext">Click here to download your personal Letter</p>
+                <button id="downloadBtn" class="download-button">click me 😪</button>
+                
+                <!-- Hidden letter content -->
+                <div id="letterContent" style="display: none;">
+                    <div class="letter">
+                        <div class="letter-header">
+                            <h3>A Letter From Zayn Sakala</h3>
+                            <p>Date: <span id="currentDate"></span></p>
+                        </div>
+                        <div class="letter-body">
+                            <p>Dear Weh Chipondo/chikashana/Wifey,</p>
+                            
+                            <p>I'm passionate about creating digital experiences that blend aesthetics with functionality. As a web designer, I believe that every pixel tells a story and every interaction creates a connection.</p>
+                            
+                            <p>My journey in web development began with curiosity and has evolved into a dedication for crafting user-centric designs. I specialize in creating responsive, accessible, and visually appealing websites that not only look great but also serve their purpose effectively.</p>
+                            
+                            <p>What drives me is the endless possibility of the digital space - the ability to bring ideas to life through code and design. Each project is an opportunity to solve problems, tell stories, and create meaningful experiences for users.</p>
+                            
+                            <p>I'm constantly learning and adapting to new technologies while maintaining a strong foundation in core web principles. This letter represents just a glimpse of my passion and dedication to this craft.</p>
+                            
+                            <p>Thank you for taking the time to learn more about my work and philosophy.</p>
+                            
+                            <p>Sincerely,<br>
+                            <strong>Zayn Sakala</strong><br>
+                            Web Designer & Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Letter download functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const downloadBtn = document.getElementById('downloadBtn');
+                const letterContent = document.getElementById('letterContent');
+                const currentDate = document.getElementById('currentDate');
+                const letterBody = document.querySelector('.letter-body');
+                
+                // Set current date
+                currentDate.textContent = new Date().toLocaleDateString();
+                
+                // Original letter text
+                const originalLetter = `Dear Reader,
+
+Hi Babe. Well i don't know where to start but I Love You sounds quite right, Saying it to you especially. I Hope youre fine and i hope we are making progress with everything. as usual. i am rooting for you. kaya if thats the correct spelling even.
+
+Never forget i am your biggest fan. i will cheer you on and on not just to hype you up but also to remind you just how beautiful, gorgeous, stunning madd attractive, strong, smart, fun in every way. Just to mention a few. Also never forget i gatchu okay let me be your safe space and one and only shoulder.
+
+Nowww!!! i know you're not good at forgetting stuff. but i surely hope my silly past wont/does not affect your decision making, view about me. Or anything that might affect us. cause i know how thoughts work. im not only saying this cause of that but also cause i just can't loose you. i wanna make you mad happy, but with somethings unforgotten i wont have as much room.
+
+And no im not forcing you to forget this and everything. But i just need you to talk to me. Talk to me so that i can reassure you that you're all i need and want.And love you better. i mean i've flopped enough already.But let me give you the best me
+
+Thank you for taking the time to read this. the rest will come in your next note Yeah.
+
+Sincerely,
+Zayn Sakala
+I Love You & All the best with everything`.trim();
+
+                downloadBtn.addEventListener('click', async function() {
+                    // Show the letter container
+                    letterContent.style.display = 'block';
+                    
+                    // Scroll to the letter
+                    letterContent.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Clear the letter body and start typing
+                    letterBody.innerHTML = '<p></p>';
+                    const currentParagraph = letterBody.querySelector('p:last-child');
+                    
+                    await typeText(originalLetter, currentParagraph, 50);
+                    
+                    // Download the file after typing completes
+                    setTimeout(() => {
+                        const blob = new Blob([originalLetter], { type: 'text/plain' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'Zayn_Sakala_Letter.txt';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }, 1000);
+                });
+
+                // Typing function
+                function typeText(text, element, speed) {
+                    return new Promise((resolve) => {
+                        const paragraphs = text.split('\n\n');
+                        let currentParaIndex = 0;
+                        
+                        function typeParagraph() {
+                            if (currentParaIndex >= paragraphs.length) {
+                                resolve();
+                                return;
+                            }
+                            
+                            const paragraph = paragraphs[currentParaIndex];
+                            let charIndex = 0;
+                            element.textContent = '';
+                            
+                            function typeChar() {
+                                if (charIndex < paragraph.length) {
+                                    if (paragraph[charIndex] === '\n' && paragraph[charIndex - 1] === '\n') {
+                                        charIndex++;
+                                        return typeChar();
+                                    } else if (paragraph[charIndex] === '\n') {
+                                        element.innerHTML += '<br>';
+                                        charIndex++;
+                                    } else {
+                                        element.textContent += paragraph[charIndex];
+                                        charIndex++;
+                                    }
+                                    setTimeout(typeChar, speed);
+                                } else {
+                                    currentParaIndex++;
+                                    if (currentParaIndex < paragraphs.length) {
+                                        const newParagraph = document.createElement('p');
+                                        letterBody.appendChild(newParagraph);
+                                        element = newParagraph;
+                                        setTimeout(typeParagraph, 500);
+                                    } else {
+                                        resolve();
+                                    }
+                                }
+                            }
+                            
+                            typeChar();
+                        }
+                        
+                        typeParagraph();
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
